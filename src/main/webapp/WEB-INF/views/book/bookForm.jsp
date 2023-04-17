@@ -5,6 +5,8 @@
   Time: 5:16 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="form"
+           uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,12 +15,11 @@
     <title>Book</title>
 </head>
 <body>
-<form method="Post">
-    Title:
-    <input type="text" name="title">
-    Description:
-    <input type="text" name="description">
-    <input type="submit">
-</form>
+<form:form method="post" modelAttribute="book">
+    <form:input path="title"/>
+    <form:input path="description"/>
+    <form:input path="rating"/>
+    <input type="submit" value="Save"/>
+</form:form>
 </body>
 </html>
